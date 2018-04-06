@@ -13,9 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.application.fooder.fooder.MainActivity;
 import com.application.fooder.fooder.R;
-import com.application.fooder.fooder.StartActivity;
-import com.application.fooder.fooder.MethodsLibrary.MyUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -50,7 +49,7 @@ public class LoginFragment extends Fragment {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
-                                            startActivity(new Intent((Activity) rootView.getContext(), StartActivity.class ));
+                                            startActivity(new Intent((Activity) rootView.getContext(), MainActivity.class ));
                                             // Sign in success, update UI with the signed-in user's information
                                             Log.d(TAG, "signInWithEmail:success");
                                             FirebaseUser user = mAuth.getCurrentUser();
