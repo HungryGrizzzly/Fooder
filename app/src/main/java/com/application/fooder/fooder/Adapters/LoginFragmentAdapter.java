@@ -4,10 +4,9 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.application.fooder.fooder.Fragment.LoginFragment;
-import com.application.fooder.fooder.Fragment.SignInFragment;
+import com.application.fooder.fooder.Fragment.SignUpFragment;
 import com.application.fooder.fooder.R;
 
 public class LoginFragmentAdapter extends FragmentPagerAdapter{
@@ -23,12 +22,10 @@ public class LoginFragmentAdapter extends FragmentPagerAdapter{
     // This determines the fragment for each tab
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
-            return new LoginFragment();
-        } else if (position == 1){
-            return new SignInFragment();
-        } else {
-            return null;
+        switch (position){
+            case 0: return new LoginFragment();
+            case 1: return new SignUpFragment();
+            default: return null;
         }
     }
 

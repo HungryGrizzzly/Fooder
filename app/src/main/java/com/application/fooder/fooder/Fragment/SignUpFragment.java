@@ -20,17 +20,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.application.fooder.fooder.MethodsLibrary.*;
 
 import static com.application.fooder.fooder.MethodsLibrary.MyUtils.isPasswordToSmall;
 import static com.application.fooder.fooder.MethodsLibrary.MyUtils.isStringEmpty;
+import static com.application.fooder.fooder.MethodsLibrary.MyUtils.showProgressDialog;
 
 
-public class SignInFragment extends Fragment {
+public class SignUpFragment extends Fragment {
 
     private FirebaseAuth mAuth;
     private final String TAG = "SIGNINFRAGMENT";
 
-    public SignInFragment() {
+    public SignUpFragment() {
         // Required empty public constructor
     }
 
@@ -49,6 +51,7 @@ public class SignInFragment extends Fragment {
                     if(isStringEmpty(email.getText().toString())) {
                         if(isPasswordToSmall(password.getText().toString())) {
                             mAuth = FirebaseAuth.getInstance();
+                            showProgressDialog(rootView.getContext(), getString(R.string.signup));
                             mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                                     .addOnCompleteListener((Activity) rootView.getContext(), new OnCompleteListener<AuthResult>() {
                                         @Override

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/action_user"
+        android:orderInCategory="300"
+        android:title="profile"
+        android:icon="@drawable/fooder"
+       >
+    </item>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="300"
+        android:title="settings"
+        android:icon="@drawable/fooder"
+        >
+    </item>
+    <item
+        android:id="@+id/action_favorite"
+        android:orderInCategory="300"
+        android:title="User"
+        android:icon="@drawable/fooder"
+        >
+    </item>
+
+</menu>

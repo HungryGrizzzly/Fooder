@@ -4,8 +4,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">Login</string>
-    <string name="create">Create</string>
+    <string name="create">Sign up</string>
     <string name="password">password</string>
     <string name="name">name</string>
     <string name="email">email</string>
+    <string name="top_feed">feed</string>
+    <string name="fresh">fresh</string>
+    <string name="search">search</string>
+    <string name="authenticating">Authenticating...</string>
+    <string name="signout">Signing out...</string>
+    <string name="signup">Signing up...</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.application.fooder.fooder.Fragment;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.application.fooder.fooder.MainActivity;
@@ -23,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static com.application.fooder.fooder.MethodsLibrary.MyUtils.isPasswordToSmall;
 import static com.application.fooder.fooder.MethodsLibrary.MyUtils.isStringEmpty;
+import static com.application.fooder.fooder.MethodsLibrary.MyUtils.*;
 
 
 public class LoginFragment extends Fragment {
@@ -44,6 +48,7 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 if(isStringEmpty(email.getText().toString())){
                     if (isPasswordToSmall(password.getText().toString())){
+                        showProgressDialog(rootView.getContext(), getString(R.string.authenticating));
                         mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                                 .addOnCompleteListener((Activity) rootView.getContext(), new OnCompleteListener<AuthResult>() {
                                     @Override
@@ -85,7 +90,6 @@ public class LoginFragment extends Fragment {
             }
         });
         mAuth = FirebaseAuth.getInstance();
-
 
         return rootView;
         }

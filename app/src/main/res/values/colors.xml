@@ -6,4 +6,5 @@
     <color name="textColor">#04a214</color>
     <color name="colorviewpager">#b1b2b1</color>
     <color name="textbuttoncolor">#222121</color>
+    <color name="themecolor">#333333</color>
 </resources>

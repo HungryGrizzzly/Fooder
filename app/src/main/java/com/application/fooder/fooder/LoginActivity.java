@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 private final String TAG = "REGISTRATION";
 @BindView(R.id.viewpager) ViewPager viewPager;
 @BindView(R.id.tablayout) TabLayout tabLayout;
+
 public static String buttonName = "Lohn";
 private FirebaseAuth mAuth;
 
@@ -34,8 +35,8 @@ private FirebaseAuth mAuth;
         ButterKnife.bind(this);
 
 
-        final LoginFragmentAdapter[] loginAdapter = {new LoginFragmentAdapter(LoginActivity.this, getSupportFragmentManager())};
-        viewPager.setAdapter(loginAdapter[0]);
+        LoginFragmentAdapter loginAdapter = new LoginFragmentAdapter(LoginActivity.this, getSupportFragmentManager());
+        viewPager.setAdapter(loginAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
 }
